@@ -85,6 +85,7 @@ namespace ImageRGB
 
         {
 
+            /* 
             if (src.R < 70)
             {
 
@@ -93,18 +94,26 @@ namespace ImageRGB
                 src = Color.FromArgb(res, res, res);
 
             }
-            else if (src.B > 90)
+            */
+            if (src.B > 90)
             {
 
 
                 src = Color.FromArgb(255, 255, 255);
             }
 
-            else if (src.G > 100)
+            else if (src.G > 130)
             {
 
 
                 src = Color.FromArgb(255, 51, 153);
+            }
+            else
+            {
+
+                int res = (src.R + src.G + src.B) / 3;
+
+                src = Color.FromArgb(res, res, res);
             }
         }
 
